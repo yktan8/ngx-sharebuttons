@@ -257,6 +257,8 @@ export class ShareDirective implements OnInit, OnChanges, OnDestroy {
       const sharerMethod = this.shareButton.method || this._share.config.sharerMethod;
       const sharerTarget = this.shareButton.target || this._share.config.sharerTarget;
 
+      console.log('[ShareButtonDirective] sharerMethod|sharerTarget = '+ sharerMethod + '|' + sharerTarget);
+
       switch (sharerMethod) {
 
         case SharerMethod.Anchor:
@@ -273,7 +275,9 @@ export class ShareDirective implements OnInit, OnChanges, OnDestroy {
 
         case SharerMethod.Window:
           // Open link using Window object
+          console.log('[ShareButtonDirective] windowObj|windowFuncName = '+ this._share.config.windowObj + '|' + this._share.config.windowFuncName);
           const openWindow = this._share.config.windowObj[this._share.config.windowFuncName];
+          console.log('[ShareButtonDirective] finalUrl|sharerTarget|windowSize = '+ finalUrl + '|' + sharerTarget + '|' + this._share.windowSize);
           const popUpWindow = openWindow(finalUrl, sharerTarget, this._share.windowSize);
 
           // Prevent security vulnerability https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c
