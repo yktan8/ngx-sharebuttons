@@ -1,6 +1,6 @@
 {
-  "name": "ngx-sharebuttons-project",
-  "version": "0.0.0",
+  "name": "ngx-sharebuttons",
+  "version": "8.0.0",
   "scripts": {
     "start": "ng serve ngx-sharebuttons-demo",
     "build-demo": "ng build ngx-sharebuttons-demo --prod",
